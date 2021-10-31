@@ -1,11 +1,12 @@
-import sys
-from .get_timestamps import get_timestamps
-from .get_video_description import get_video_description
+import click
+import requests
+from . import page_content as pc
 
 
-def main():
-    print(get_timestamps(get_video_description(
-        sys.argv[1])))
+@click.command()
+@click.argument("video_url")
+def main(video_url):
+    print(pc.video_data(requests.get(video_url).text))
 
 
 if __name__ == '__main__':
