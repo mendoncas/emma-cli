@@ -7,6 +7,8 @@ name = "pypi"
 typing = "*"
 requests = "*"
 click = "*"
+pytube = "*"
+emma = {editable = true, path = "."}
 
 [dev-packages]
 
