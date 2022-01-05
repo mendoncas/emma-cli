@@ -3,11 +3,8 @@ from bs4 import BeautifulSoup
 from typing import Dict
 
 
-def video_data(content: str) -> dict:
-    return {
-        "title": get_title(content),
-        "timestamps": get_timestamps(get_description(content))
-    }
+def timestamps(content: str) -> dict:
+    return get_timestamps(get_description(content))
 
 
 def get_title(content: str) -> str:

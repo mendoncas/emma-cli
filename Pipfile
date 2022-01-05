@@ -9,6 +9,7 @@ requests = "*"
 click = "*"
 pytube = "*"
 emma = {editable = true, path = "."}
+pydub = "*"
 
 [dev-packages]
 
