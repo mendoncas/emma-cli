@@ -4,12 +4,6 @@ from youtube_dl import YoutubeDL
 from . import page_content as pc
 from . import audio as ad
 
-# todo:
-# save on Musics directory by default
-# allow user to set download path
-# save mp3 with album, artist info and thumbnail
-# crop audio with timestamps
-
 
 @click.command()
 @click.argument("video_url")
@@ -20,14 +14,14 @@ def main(video_url):
 
     title = yt.extract_info(video_url, download=False)['title']
 
-    # yt = YoutubeDL({'format': 'bestaudio/best',
-    #                 'outtmpl': f'{title}.mp3',
-    #                 'postprocessors': [{
-    #                     'key': 'FFmpegExtractAudio',
-    #                     'preferredcodec': 'mp3'
-    #                 }]})
-
-    # yt.extract_info(video_url)
+    yt = YoutubeDL({'format': 'bestaudio/best',
+                    'outtmpl': f'{title}.mp3',
+                    'postprocessors': [{
+                        'key': 'FFmpegExtractAudio',
+                        'preferredcodec': 'mp3'
+                    }]})
+#
+    yt.extract_info(video_url)
 
     print('finished downloading audio... cropping...')
 
